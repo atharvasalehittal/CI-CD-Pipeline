@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+	.checkbox-container {
+      display: flex;
+  justify-content: space-between;
+      align-items: center;
+    }
+
+.checkbox-container label {
+  width: 150px; 
+  margin-right: 10px;
+}
+.section{
+margin: 1rem 0;
+}
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="button"] {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+
+<form id="surveyForm" action="submit_survey.php" method="post">
+    <h1>Student Survey Form</h1>
+
+    <h3> <label for="firstName">First Name *</label> </h3>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <h3> <label for="lastName">Last Name *</label> </h3>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <h3> <label for="streetAddress">Street Address *</label> </h3>
+    <input type="text" id="streetAddress" name="streetAddress" required>
+
+    <h3> <label for="city">City *</label> </h3>
+    <input type="text" id="city" name="city" required>
+
+    <h3> <label for="state">State *</label> </h3>
+    <input type="text" id="state" name="state" required>
+
+    <h3> <label for="zip">Zip *</label> </h3>
+    <input type="text" id="zip" name="zip" required>
+
+    <h3> <label for="telephone">Telephone Number *</label> </h3>
+    <input type="tel" id="telephone" name="telephone" required>
+
+    <h3> <label for="email">E-mail *</label> </h3>
+    <input type="email" id="email" name="email" required>
+
+    <h3> <label for="dateOfSurvey">Date of Survey *</label> </h3>
+    <input type="date" id="dateOfSurvey" name="dateOfSurvey" required>
+
+	<div class="section">
+		<h3>What did you like most about the campus? *</h3>
+
+		
+    		<div class="checkbox-container">
+			<label for="students">Students</label>
+			<input type="checkbox" id="students" name="students">
+		</div>
+		
+		<div class="checkbox-container">
+			<label for="location">Location</label>
+			<input type="checkbox" id="location" name="location">
+		</div>
+		<div class="checkbox-container">
+			<label for="campus">Campus</label>
+			<input type="checkbox" id="campus" name="campus">
+		</div>
+		<div class="checkbox-container">
+			<label for="atmosphere">Atmosphere</label>
+			<input type="checkbox" id="atmosphere" name="atmosphere">
+		</div>
+		<div class="checkbox-container">
+			<label for="dorm">Dorm Rooms</label>
+			<input type="checkbox" id="dorm" name="dorm">
+		</div>
+    		
+		<div class="checkbox-container">
+			<label for="sports">Sports</label>
+			<input type="checkbox" id="sports" name="sports">
+		</div>		
+
+	</div>
+
+	<div class="section">
+		<h3>How did you become interested in the university? *</h3>
+
+		<div class="checkbox-container">
+			<label for="friends">Friends</label>
+			<input type="radio" id="friends" name="friends">
+		</div>
+		<div class="checkbox-container">
+			<label for="tv">Television</label>
+			<input type="radio" id="tv" name="tv">
+		</div>
+		<div class="checkbox-container">
+			<label for="internet">Internet</label>
+			<input type="radio" id="internet" name="internet">
+		</div>
+    		
+		<div class="checkbox-container">
+			<label for="Other">Other</label>
+			<input type="radio" id="Other" name="Other">
+		</div>		
+
+	</div>
+
+    <h3> <label for="recommendation">Likelihood of Recommending the School *</label> </h3>
+    <select id="recommendation" name="recommendation">
+        <option value="veryLikely">Very Likely</option>
+        <option value="likely">Likely</option>
+        <option value="unlikely">Unlikely</option>
+    </select>
+
+    <h3> <label for="raffle">Raffle (Enter at least ten comma-separated numbers from 1 through 100) *</label> </h3>
+    <input type="text" id="raffle" name="raffle" required>
+
+    <h3> <label for="comments">Additional Comments</label> </h3>
+    <textarea id="comments" name="comments" rows="4"></textarea>
+
+    <button type="submit" onclick="submitForm()">Submit</button>
+    <button type="button" onclick="cancelForm()">Cancel</button>
+</form>
+
+<script>
+    function submitForm() {
+        // You can add additional validation logic here if needed
+        document.getElementById("surveyForm").submit();
+    }
+
+    function cancelForm() {
+        // Reset the form fields
+        document.getElementById("surveyForm").reset();
+    }
+</script>
+
+</body>
+</html>
