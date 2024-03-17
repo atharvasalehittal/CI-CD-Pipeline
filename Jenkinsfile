@@ -39,8 +39,8 @@ pipeline {
         stage('Deploying to single node in Rancher') {
             steps {
                 script {
-                    sh "sudo kubectl set image deployment/surveyform container-0=attusale21/surveyform645:$dateTag"
-                    sh "sudo kubectl set image deployment/surveyformlb container-0=attusale21/surveyform645:$dateTag"
+                    sh "kubectl set image deployment/surveyform container-0=attusale21/surveyform645:$dateTag"
+                    sh "kubectl set image deployment/surveyformlb container-0=attusale21/surveyform645:$dateTag"
                 }
             }
         }
