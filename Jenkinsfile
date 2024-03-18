@@ -33,7 +33,7 @@ pipeline {
       stage('Deploying to Rancher to single node(deployed in 3 replicas)') {
          steps {
             script{
-               sh "kubectl set image deployment/surveyform container-0=attusale21/surveyform645:${env.TIMESTAMP}"
+               sh "kubectl set image deployment/surveyformnb container-0=attusale21/surveyform645:${env.TIMESTAMP}"
             }
          }
       }
@@ -41,7 +41,7 @@ pipeline {
       stage('Deploying to Rancher using Load Balancer as a service') {
          steps {
             script{
-               sh "kubectl set image deployment/surveyform-lb container-0=attusale21/surveyform645:${env.TIMESTAMP}"
+               sh "kubectl set image deployment/surveyformlb container-0=attusale21/surveyform645:${env.TIMESTAMP}"
             }
          }
       }
