@@ -1,5 +1,5 @@
 # Use offical tomcat runtime as a parent image
-FROM FROM tomcat:9.0-jdk15
+FROM tomcat:9.0-jdk15
 
 # Copy the war file into container
 COPY SurveyForm.war /usr/local/tomcat/webapps/
