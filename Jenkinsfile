@@ -11,7 +11,7 @@ pipeline {
          steps {
             script{
                sh 'rm -rf *.war'
-               sh 'jar -cvf SurveyForm.war -C src/main/webapp/ .'
+               sh 'jar -cvf SurveyForm.war -C .'
                //sh 'echo ${BUILD_TIMESTAMP}'
                docker.withRegistry('',registryCredential){
                   def customImage = docker.build("attusale21/surveyform645:${env.TIMESTAMP}")
